@@ -1,24 +1,29 @@
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // npm i react-router-dom
+import {
+  BrowserRouter as Router,
+  Routes, // Switch has been replaced with Routes
+  Route,
+} from "react-router-dom"; // npm i react-router-dom
 import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
-import About from "./components/pages/About";
-import Menu from "./components/pages/Menu";
-import Locations from "./components/pages/Locations";
-import Order from "./components/pages/Order";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Menu from "./pages/Menu";
+import Locations from "./pages/Locations";
+import Order from "./pages/Order";
 import Footer from "./components/Footer";
+import Error from "./pages/Error"; // Page appears when it is a mistype or not exist page
 
 export default function App() {
   return (
     <Router>
       <Navbar />
-      {/* Switch has been replaced with Routes */}
       <Routes>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/menu" component={Menu} />
-        <Route path="/locations" component={Locations} />
-        <Route path="/order" component={Order} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </Router>
