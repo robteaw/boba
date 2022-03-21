@@ -5,13 +5,13 @@ import {
   Route,
 } from "react-router-dom"; // npm i react-router-dom
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Menu from "./pages/Menu";
-import Locations from "./pages/Locations";
-import Order from "./pages/Order";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Menu from "./pages/Menu/Menu";
+import Contact from "./pages/Contact/Contact";
+import Order from "./pages/Order/Order";
 import Footer from "./components/Footer";
-import Error from "./pages/Error"; // Page appears when it is a mistype or not exist page
+import Error from "./pages/Error"; // Error Page
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/locations" element={<Locations />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/order" element={<Order />} />
         <Route path="*" element={<Error />} />
       </Routes>

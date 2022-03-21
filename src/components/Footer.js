@@ -10,6 +10,10 @@ const Foot = styled.div`
   color: #fff;
   background-color: #000;
   display: flex;
+  width: 100%;
   justify-content: center;
-  padding: 2rem;
+  margin-top: auto;
+  padding: 1.5rem;
+  bottom: 0;
+  position: relative;
 `;
