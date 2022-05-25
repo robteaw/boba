@@ -6,7 +6,7 @@ export default function Hero() {
   let navigate = useNavigate();
 
   return (
-    <Section>
+    <Container>
       <h1>Boba Drunk</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
@@ -20,15 +20,42 @@ export default function Hero() {
       >
         Menu
       </button>
-    </Section>
+    </Container>
   );
 }
 
 // styling
-const Section = styled.div`
+const Container = styled.div`
   background-color: white;
-  height: 100vh;
+  height: 60vh;
+  width: 100%;
+  padding: 0 20%;
+  display: grid;
+  gap: 1rem;
+  grid-even-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+
   h1 {
     color: blue;
+  }
+
+  button {
+    background-color: var(--btnColor);
+    font-weight: bold;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: var(--textHover);
+    background-color: var(--btnHover);
+  }
+
+  @media (min-width: 50em) {
+    .grid-auto-flow {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
   }
 `;

@@ -7,6 +7,12 @@
   text-decoration: none;
 }
 
+:root {
+  --textHover: #fff;
+  --btnColor: #E6E6FA;
+  --btnHover: #1E90FF;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
