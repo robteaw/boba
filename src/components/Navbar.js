@@ -31,16 +31,14 @@ export default function Navbar() {
         <div className="toggle"></div>
       </div>
       <ul className="links">
-        <motion.li>
-          {/* <Link to="/" className="active">
-            Home
-          </Link> */}
+        <motion.li variants={linkAnim}>
+          <Link to="/menu">Menu</Link>
+        </motion.li>
+        <motion.li variants={linkAnim}>
+          <Link to="/location">Location</Link>
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/about">About</Link>
-        </motion.li>
-        <motion.li variants={linkAnim}>
-          <Link to="/menu">Menu</Link>
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/contact">Contact</Link>
@@ -74,6 +72,7 @@ const Nav = styled(motion.nav)`
     li {
       a {
         color: red;
+        font-size: .9rem;
         font-weight: 600;
         text-decoration: none;
         text-transform: uppercase;
@@ -96,7 +95,7 @@ const Nav = styled(motion.nav)`
 `;
 
 const Logo = styled.img`
-  height: 70px;
+  height: 55px;
   margin-top: 1rem;
   align-items: left;
   cursor: pointer;

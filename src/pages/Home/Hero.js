@@ -26,7 +26,7 @@ export default function Hero() {
 
 // styling
 const Container = styled.div`
-  background-color: white;
+  background-color: gray;
   height: 60vh;
   width: 100%;
   padding: 0 20%;
