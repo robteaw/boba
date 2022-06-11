@@ -8,7 +8,7 @@ export default function Footer() {
 // styling
 const Foot = styled.div`
   color: #fff;
-  background-color: #000;
+  background-color: var(--topBottom);
   display: flex;
   width: 100%;
   justify-content: center;

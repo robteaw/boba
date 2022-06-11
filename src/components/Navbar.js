@@ -57,7 +57,7 @@ export default function Navbar() {
 
 // styling
 const Nav = styled(motion.nav)`
-  background-color: #000;
+  background-color: var(--navBg);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -71,8 +71,8 @@ const Nav = styled(motion.nav)`
     gap: 2rem;
     li {
       a {
-        color: red;
-        font-size: .9rem;
+        color: var(--navText);
+        font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
         text-transform: uppercase;
@@ -81,21 +81,19 @@ const Nav = styled(motion.nav)`
         margin: 0 1rem;
         transition: 0.3s ease-in-out;
         &:hover {
-          color: #f9c7f4;
+          color: var(--navHover);
+          .cart {
+            align-items: right;
+            justify-content: right;
+          }
         }
-      }
-      .active {
-      }
-      .cart {
-        align-items: right;
-        justify-content: right;
       }
     }
   }
 `;
 
 const Logo = styled.img`
-  height: 55px;
+  height: 50px;
   margin-top: 1rem;
   align-items: left;
   cursor: pointer;

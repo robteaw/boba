@@ -11,6 +11,11 @@
   --textHover: #fff;
   --btnColor: #E6E6FA;
   --btnHover: #1E90FF;
+  --navBg: #fff;
+  --navText: #00008B;
+  --navHover: #FF8C00;
+  --textColor2: #fff;
+  --topBottom: #000;
 }
 
 html {

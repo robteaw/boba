@@ -4,6 +4,7 @@ import {
   Routes, // Switch has been replaced with Routes
   Route,
 } from "react-router-dom"; // npm i react-router-dom
+import Top from "./components/Top";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -16,6 +17,7 @@ import Error from "./pages/Error"; // Error Page
 export default function App() {
   return (
     <Router>
+      <Top />
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
