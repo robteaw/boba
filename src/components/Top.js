@@ -32,6 +32,7 @@ const Container = styled.div`
     width: 2rem;
     float: right;
     margin-right: 1rem;
+    border: none;
     cursor: pointer;
     &:hover {
       color: var(--navHover);

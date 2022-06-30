@@ -61,7 +61,7 @@ const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 4vw;
+  padding: 0.3rem 4vw;
   .toggle {
     display: none;
   }
@@ -72,6 +72,7 @@ const Nav = styled(motion.nav)`
     li {
       a {
         color: var(--navText);
+        font-family: "proxima-nova", sans-serif;
         font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
@@ -94,7 +95,6 @@ const Nav = styled(motion.nav)`
 
 const Logo = styled.img`
   height: 50px;
-  margin-top: 1rem;
   align-items: left;
   cursor: pointer;
 `;
