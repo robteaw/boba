@@ -16,25 +16,24 @@
   --navHover: #FF8C00;
   --textColor2: #fff;
   --topBottom: #4B0082;
+  --subColor: #4B0082;
+  --subText: #fff;
+  --subHover: #fff;
+  --subTextHover: #4B0082;
 }
-
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
 body {
   font-family: 'Nunito', sans-serif;
 }
-
 section, footer, .lower__footer {
   margin: 0 5vw;
 }
-
 section:first-of-type {
   margin: 0;
 }
-
 section {
   margin-top: 5rem;
   margin-bottom: 5rem;
