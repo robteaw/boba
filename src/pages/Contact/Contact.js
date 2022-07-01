@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// tesing
-import Button from "../../components/Button";
-import Search from "../../components/Search";
 
 export default function Locations() {
   return (
