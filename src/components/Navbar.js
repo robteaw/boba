@@ -41,6 +41,9 @@ export default function Navbar() {
           <Link to="/location">Location</Link>
         </motion.li>
         <motion.li variants={linkAnim}>
+          <Link to="/career">Career</Link>
+        </motion.li>
+        <motion.li variants={linkAnim}>
           <Link to="/contact">Contact</Link>
         </motion.li>
         <div className="cart">
