@@ -4,8 +4,8 @@ import image from "../../images/about_boba.png";
 
 export default function About() {
   return (
-    <Section>
-      <div>
+    <Container>
+      <Left>
         <h1>About Boba Drunk</h1>
         <p>
           Boba Drunk was founded on February 2021 in Houston, TX. The name, Boba
@@ -13,34 +13,37 @@ export default function About() {
           addicting. We provide a variety of boba teas. No worries, there is no
           alcohol. The shop is maintained to be a family-friendly environment.
         </p>
-      </div>
+      </Left>
 
       <div>
         <img src={image} alt="" />
       </div>
-    </Section>
+    </Container>
   );
 }
 
-const Section = styled.div`
+const Container = styled.div`
   height: 100%;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1100px;
+  display: flex;
+  margin: 3rem auto;
   padding: 5rem;
   align-items: center;
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-  h1 {
-    font-size: 2.5rem;
-  }
+  justify-content: center;
+  column-gap: 10rem;
   p {
-    font-size: 1.125rem;
-    line-height: 2;
     margin: 20px 0 32px 0;
+    line-height: 2;
   }
   img {
     height: 16rem;
   }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+const Left = styled.div`
+  text-align: left;
 `;

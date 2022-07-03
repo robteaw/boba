@@ -15,5 +15,5 @@ const Foot = styled.div`
   margin-top: auto;
   padding: 1.5rem;
   bottom: 0;
-  position: relative;
+  position: fixed;
 `;

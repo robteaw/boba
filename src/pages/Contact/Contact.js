@@ -6,39 +6,55 @@ export default function Locations() {
     <Container>
       <h1>Contact</h1>
       <p>
-        If you have any questions or concerns, feel free to leave a
-        message.
+        If you have any questions or concerns, feel free to leave a message.
+        We'll respond as soon as possible.
       </p>
       <InnerContainer>
-      <form action="">
-        <div>
-          <input type="text" placeholder="First Name" required
-                class="form-element" />
-        </div>
-        <div>
-          <input type="text" placeholder="Last Name" required
-                class="form-element" />
-        </div>
-        <div>
-          <input type="text" placeholder="Email" required
-                className="form-element" />
-        </div>
-        <div>
-          <input type="text" placeholder="Phone Number" class="form-element" />
-        </div>
-        <div class="form-text">
-          <textarea
-            name="message"
-            id="message"
-            required
-            class="form-element"
-            placeholder="Message"
-          ></textarea>
-        </div>
-        <Submit>
-          <input type="submit" value="SEND" />
-        </Submit>
-      </form>
+        <form action="">
+          <div>
+            <input
+              type="text"
+              placeholder="First Name *"
+              required
+              class="form-element"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Last Name *"
+              required
+              class="form-element"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Email *"
+              required
+              className="form-element"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Phone Number"
+              class="form-element"
+            />
+          </div>
+          <div class="form-text">
+            <textarea
+              name="message"
+              id="message"
+              required
+              class="form-element"
+              placeholder="Message *"
+            ></textarea>
+          </div>
+          <Submit>
+            <input type="submit" value="SEND" />
+          </Submit>
+        </form>
       </InnerContainer>
     </Container>
   );
@@ -52,12 +68,7 @@ const Container = styled.div`
   padding: 5rem 20%;
   align-items: center;
   text-align: center;
-  h1 {
-    font-size: 2.5rem;
-  }
   p {
-    font-size: 1.125rem;
-    line-height: 2;
     margin-bottom: 1.5rem;
   }
 `;
@@ -69,7 +80,7 @@ const InnerContainer = styled.div`
     grid-gap: 16px;
     padding: 32px;
     background: var(--bgColor);
-    
+
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -89,20 +100,21 @@ const InnerContainer = styled.div`
         background-color: var(--mainColor);
       }
     }
-  input {
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0.75rem;
+    input {
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0.75rem;
+    }
+    .form-text {
+      grid-column: 1 / -1;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      padding: 0.75rem;
+    }
   }
-  .form-text {
-    grid-column: 1 / -1;
-  }
-  textarea {
-    resize: none;
-    min-height: 100px;
-    padding: 0.75rem;
-  }
-`
+`;
 
 const Submit = styled.div`
   grid-column: 1 / -1;
@@ -112,9 +124,9 @@ const Submit = styled.div`
     background: var(--subColor);
     font-size: 1rem;
     font-weight: 600;
-    width: 14rem;
+    width: 100%;
     padding: 0.7rem;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     border: 2px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -125,4 +137,4 @@ const Submit = styled.div`
       border: 2px solid var(--subTextHover);
     }
   }
-`
+`;
