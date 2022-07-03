@@ -52,22 +52,23 @@ export default function Menu() {
 }
 
 const Container = styled.div`
-  margin: 8rem 25rem;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 5rem auto;
+  padding: 8rem 20%;
 
   .card_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 15rem;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
   .card {
     width: 15rem;
-    padding: 3rem;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem;
     cursor: pointer;
     position: relative;
     border: 1px;
@@ -76,6 +77,7 @@ const Container = styled.div`
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   .card:hover {
+    color: var(--navHover);
     border-radius: 2.5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }

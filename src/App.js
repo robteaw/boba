@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Menu from "./pages/Menu/Menu";
 import Location from "./pages/Location/Location";
+import Career from "./pages/Career/Career";
 import Contact from "./pages/Contact/Contact";
 import Order from "./pages/Order/Order";
 import Footer from "./components/Footer";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/order" element={<Order />} />
         <Route path="*" element={<Error />} />
