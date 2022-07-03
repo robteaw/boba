@@ -59,8 +59,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   max-width: 1100px;
-  margin: 3rem auto;
-  padding: 5rem;
+  margin: 3rem auto 10rem auto;
   align-items: center;
   justify-content: center;
 `;
@@ -69,6 +68,8 @@ const InnerContainer = styled.div`
   padding: 5rem;
   display: flex;
   column-gap: 10rem;
+  align-items: center;
+  justify-content: center;
   iframe {
     height: 24rem;
     width: 20rem;

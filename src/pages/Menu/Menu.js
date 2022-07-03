@@ -11,7 +11,8 @@ import styled from "styled-components";
 
 export default function Menu() {
   return (
-    <Section>
+    <Container>
+      <h1>Menu</h1>
       <div className="card_container">
         <div className="card">
           <img src={blue} alt="" />
@@ -46,24 +47,25 @@ export default function Menu() {
           <h2>Jackfruit</h2>
         </div>
       </div>
-    </Section>
+    </Container>
   );
 }
 
-const Section = styled.div`
-  margin: 10rem 25rem;
+const Container = styled.div`
+  margin: 8rem 25rem;
 
   .card_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-bottom: 15rem;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
-
   .card {
-    padding: 0.5rem;
+    width: 15rem;
+    padding: 3rem;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -73,13 +75,18 @@ const Section = styled.div`
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
-
   .card:hover {
     border-radius: 2.5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
-
   img {
     height: 10rem;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    margin-top: 2rem;
   }
 `;

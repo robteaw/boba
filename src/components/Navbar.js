@@ -32,13 +32,13 @@ export default function Navbar() {
       </div>
       <ul className="links">
         <motion.li variants={linkAnim}>
+          <Link to="/about">About</Link>
+        </motion.li>
+        <motion.li variants={linkAnim}>
           <Link to="/menu">Menu</Link>
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/location">Location</Link>
-        </motion.li>
-        <motion.li variants={linkAnim}>
-          <Link to="/about">About</Link>
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/contact">Contact</Link>
