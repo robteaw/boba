@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Locations() {
+export default function Contact() {
   return (
     <Container>
       <h1>Contact</h1>
       <p>
-        If you have any questions or concerns, feel free to leave a message.
+        If you have any questions, concerns or wanting to apply, feel free to leave a message. If you are applying please attach your resume and provide a short introduction.
         We'll respond as soon as possible.
       </p>
       <InnerContainer>
@@ -38,9 +38,21 @@ export default function Locations() {
           <div>
             <input
               type="text"
-              placeholder="Phone Number"
+              placeholder="Phone Number *"
+              required
               class="form-element"
             />
+          </div>
+          <div>
+            <select name="work" id="work">
+              <option disabled selected>Reason</option>
+              <option value="remote">Question</option>
+              <option value="onlocation">Concern</option>
+              <option value="onlocation">Apply</option>
+            </select>
+          </div>
+          <div>
+            <input type="file" id="myFile" name="filename" />
           </div>
           <div class="form-text">
             <textarea
@@ -64,12 +76,13 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto 5rem auto;
+  margin: 3rem auto 10rem auto;
   padding: 5rem 20%;
   align-items: center;
   text-align: center;
   p {
     margin-bottom: 1.5rem;
+    text-align: left;
   }
 `;
 
@@ -78,9 +91,9 @@ const InnerContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 16px;
-    padding: 32px;
-    background: var(--bgColor);
-
+    align-items: center;
+    justify-content: center;
+    
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -100,7 +113,7 @@ const InnerContainer = styled.div`
         background-color: var(--mainColor);
       }
     }
-    input {
+    input, select {
       width: 100%;
       margin: 1rem 0;
       padding: 0.75rem;
@@ -124,7 +137,7 @@ const Submit = styled.div`
     background: var(--subColor);
     font-size: 1rem;
     font-weight: 600;
-    width: 100%;
+    width: 10rem;
     padding: 0.7rem;
     margin-top: 1rem;
     border: 2px solid transparent;
