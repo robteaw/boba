@@ -32,25 +32,25 @@ export default function Navbar() {
           {click ? <FaTimes /> : <FaBars />}
         </MenuIcon>
       </div>
-      <ul className={click ? "links active" : "links"}>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/about">About</Link>
+          <Link to="/about" onClick={closeMobileMenu} className="nav-links">About</Link>
         </motion.li>
         <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/menu">Menu</Link>
+          <Link to="/menu" onClick={closeMobileMenu} className="nav-links">Menu</Link>
         </motion.li>
         <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/location">Location</Link>
+          <Link to="/location" onClick={closeMobileMenu} className="nav-links">Location</Link>
         </motion.li>
         <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/career">Career</Link>
+          <Link to="/career" onClick={closeMobileMenu} className="nav-links">Career</Link>
         </motion.li>
         <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" onClick={closeMobileMenu} className="nav-links">Contact</Link>
         </motion.li>
         <div className="cart">
           <motion.li variants={linkAnim} className="nav-item">
-            <Link to="/order">
+            <Link to="/order" onClick={closeMobileMenu} className="nav-links">
               <FaShoppingCart />
             </Link>
           </motion.li>
@@ -63,14 +63,16 @@ export default function Navbar() {
 // styling
 const Nav = styled(motion.nav)`
   background-color: var(--navBg);
+  height: 80px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0.3rem 4vw;
-  .toggle {
-    display: none;
-  }
-  .links {
+  position: relative;
+  top: 0;
+  z-index: 99;
+  .nav-menu {
     display: flex;
     list-style-type: none;
     gap: 2rem;
@@ -105,22 +107,46 @@ const Nav = styled(motion.nav)`
   @media (max-width: 1100px) {
     position: relative;
 
-    .links {
+    .nav-menu {
       display: flex;
       flex-direction: column;
       width: 100%;
+      list-style: none;
       position: absolute;
       top: 4.375rem; /* removes the spacing in navbar and menu */
       left: -100%;
+      opacity: 1;
       transition: all 0.5s ease;
     }
-    .links active {
+    .nav-menu active {
       background-color: var(--selectColor);
       left: 0;
       transition: all 0.6s ease;
+      opacity: 1;
       z-index: 999;
       outline: none;
       border: 0;
+    }
+    .nav-links {
+      text-align: center;
+      padding: 2rem;
+      top: 0;
+      width: 100%;
+      display: table;
+    }
+    .nav-item {
+      text-align: center;
+      padding: 2rem;
+      top: 0;
+      width: 100%;
+      display: table;
+      
+      .nav-item:nth-child(1) {
+        margin-top: 3.5rem;
+      }
+      .nav-item:nth-child(5) {
+        margin-bottom: 100%;
+      }
     }
   }
 `;
@@ -134,8 +160,7 @@ const Logo = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-    margin: 1rem 3rem;
-    /* transform: translate(25%, 50%); */
+    transform: translate(25%, 30%);
   }
 `;
 
@@ -146,7 +171,6 @@ const MenuIcon = styled.div`
     color: var(--subColor);
     display: block;
     position: absolute;
-    /* margin: 2.5rem 1rem; */
     top: 0;
     right: 0;
     transform: translate(-100%, 60%);
