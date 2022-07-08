@@ -12,8 +12,9 @@ const Foot = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: auto;
   padding: 1.5rem;
+  top: 100%;
   bottom: 0;
-  position: fixed;
+  position: relative;
+  clear: both;
 `;

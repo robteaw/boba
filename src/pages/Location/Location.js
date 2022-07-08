@@ -54,11 +54,13 @@ export default function Location() {
   );
 }
 
+// styling
 const Container = styled.div`
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   max-width: 1100px;
-  margin: 3rem auto 10rem auto;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
 `;

@@ -6,15 +6,16 @@ export default function Contact() {
     <Container>
       <h1>Contact</h1>
       <p>
-        If you have any questions, concerns or wanting to apply, feel free to leave a message. If you are applying please attach your resume and provide a short introduction.
-        We'll respond as soon as possible.
+        If you have any questions, concerns or wanting to apply, feel free to
+        leave a message. If you are applying please attach your resume and
+        provide a short introduction. We'll respond as soon as possible.
       </p>
       <InnerContainer>
         <form action="">
           <div>
             <input
               type="text"
-              placeholder="First Name *"
+              placeholder="First Name"
               required
               class="form-element"
             />
@@ -22,7 +23,7 @@ export default function Contact() {
           <div>
             <input
               type="text"
-              placeholder="Last Name *"
+              placeholder="Last Name"
               required
               class="form-element"
             />
@@ -30,7 +31,7 @@ export default function Contact() {
           <div>
             <input
               type="text"
-              placeholder="Email *"
+              placeholder="Email"
               required
               className="form-element"
             />
@@ -38,29 +39,31 @@ export default function Contact() {
           <div>
             <input
               type="text"
-              placeholder="Phone Number *"
+              placeholder="Phone Number"
               required
               class="form-element"
             />
           </div>
-          <div>
+          <Reason>
             <select name="work" id="work">
-              <option disabled selected>Reason</option>
-              <option value="remote">Question</option>
-              <option value="onlocation">Concern</option>
-              <option value="onlocation">Apply</option>
+              <option disabled selected>
+                Reason
+              </option>
+              <option value="1">Question</option>
+              <option value="2">Concern</option>
+              <option value="3">Apply</option>
             </select>
-          </div>
-          <div>
+          </Reason>
+          <File>
             <input type="file" id="myFile" name="filename" />
-          </div>
+          </File>
           <div class="form-text">
             <textarea
               name="message"
               id="message"
               required
               class="form-element"
-              placeholder="Message *"
+              placeholder="Message"
             ></textarea>
           </div>
           <Submit>
@@ -72,11 +75,13 @@ export default function Contact() {
   );
 }
 
+// styling
 const Container = styled.div`
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   max-width: 1280px;
-  margin: 3rem auto 10rem auto;
+  margin: 0 auto;
   padding: 5rem 20%;
   align-items: center;
   text-align: center;
@@ -93,7 +98,7 @@ const InnerContainer = styled.div`
     grid-gap: 16px;
     align-items: center;
     justify-content: center;
-    
+
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -113,10 +118,12 @@ const InnerContainer = styled.div`
         background-color: var(--mainColor);
       }
     }
-    input, select {
+    input,
+    select {
       width: 100%;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       padding: 0.75rem;
+      border-radius: 0.5rem;
     }
     .form-text {
       grid-column: 1 / -1;
@@ -125,6 +132,55 @@ const InnerContainer = styled.div`
       resize: vertical;
       min-height: 100px;
       padding: 0.75rem;
+    }
+  }
+`;
+
+const Reason = styled.div`
+  select {
+    appearance: none;
+    border: 0;
+    font: inherit;
+    width: 100%;
+    color: var(--subColor);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+        no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--selectColor) 3em, var(--btnColor) 3em);
+    color: black;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    option {
+      color: inherit;
+      background-color: var(--textHover);
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+  }
+`;
+
+const File = styled.div`
+  input[type="file"]::file-selector-button {
+    color: var(--subTextHover);
+    background: var(--subHover);
+    font-size: 1rem;
+    font-weight: 600;
+    width: 8rem;
+    padding: 0.7rem;
+    border: 2px solid var(--subTextHover);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      color: var(--subText);
+      background: var(--subColor);
+      border: 2px solid var(--subColor);
     }
   }
 `;

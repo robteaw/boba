@@ -20,6 +20,7 @@
   --subText: #fff;
   --subHover: #fff;
   --subTextHover: #4B0082;
+  --selectColor: #b09cbd;
 }
 html {
   scroll-behavior: smooth;
@@ -28,16 +29,6 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
 }
-section, footer, .lower__footer {
-  margin: 0 5vw;
-}
-section:first-of-type {
-  margin: 0;
-}
-section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
 h1 {
   font-size: 2.5rem;
 }
@@ -45,4 +36,3 @@ p {
   font-size: 1.125rem;
   line-height: 2;
 }
-

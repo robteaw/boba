@@ -28,26 +28,28 @@ export default function Navbar() {
             onClick={closeMobileMenu}
           />
         </Link>
-        <div className="toggle"></div>
+        <MenuIcon onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </MenuIcon>
       </div>
-      <ul className="links">
-        <motion.li variants={linkAnim}>
+      <ul className={click ? "links active" : "links"}>
+        <motion.li variants={linkAnim} className="nav-item">
           <Link to="/about">About</Link>
         </motion.li>
-        <motion.li variants={linkAnim}>
+        <motion.li variants={linkAnim} className="nav-item">
           <Link to="/menu">Menu</Link>
         </motion.li>
-        <motion.li variants={linkAnim}>
+        <motion.li variants={linkAnim} className="nav-item">
           <Link to="/location">Location</Link>
         </motion.li>
-        <motion.li variants={linkAnim}>
+        <motion.li variants={linkAnim} className="nav-item">
           <Link to="/career">Career</Link>
         </motion.li>
-        <motion.li variants={linkAnim}>
+        <motion.li variants={linkAnim} className="nav-item">
           <Link to="/contact">Contact</Link>
         </motion.li>
         <div className="cart">
-          <motion.li variants={linkAnim}>
+          <motion.li variants={linkAnim} className="nav-item">
             <Link to="/order">
               <FaShoppingCart />
             </Link>
@@ -92,6 +94,33 @@ const Nav = styled(motion.nav)`
           }
         }
       }
+      .nav-item {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    position: relative;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 4.375rem; /* removes the spacing in navbar and menu */
+      left: -100%;
+      transition: all 0.5s ease;
+    }
+    .links active {
+      background-color: var(--selectColor);
+      left: 0;
+      transition: all 0.6s ease;
+      z-index: 999;
+      outline: none;
+      border: 0;
     }
   }
 `;
@@ -100,4 +129,28 @@ const Logo = styled.img`
   height: 50px;
   align-items: left;
   cursor: pointer;
+
+  @media (max-width: 1100px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem 3rem;
+    /* transform: translate(25%, 50%); */
+  }
+`;
+
+const MenuIcon = styled.div`
+  display: none;
+
+  @media (max-width: 1100px) {
+    color: var(--subColor);
+    display: block;
+    position: absolute;
+    /* margin: 2.5rem 1rem; */
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 `;

@@ -23,6 +23,7 @@ export default function Card() {
   );
 }
 
+// styling
 const Container = styled.div``;
 
 const Cards = styled.div`
