@@ -13,7 +13,7 @@ export default function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(!false);
+  const closeMobileMenu = () => setClick(false);
 
   return (
     <Nav as={motion.nav} initial="hidden" animate={controls} ref={element}>
@@ -73,7 +73,7 @@ export default function Navbar() {
 // styling
 const Nav = styled(motion.nav)`
   background-color: var(--navBg);
-  height: 80px;
+  height: 65px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -122,7 +122,7 @@ const Nav = styled(motion.nav)`
       flex-direction: column;
       width: 100%;
       position: absolute;
-      top: 4.375rem; /* removes the spacing in navbar and menu */
+      top: 4rem; /* removes the spacing in navbar and menu */
       left: -100%;
       transition: all 0.5s ease;
     }
@@ -155,7 +155,7 @@ const Logo = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(25%, 30%);
+    transform: translate(25%, 15%);
   }
 `;
 
@@ -168,7 +168,7 @@ const MenuIcon = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    transform: translate(-100%, 50%);
     font-size: 1.8rem;
     cursor: pointer;
   }

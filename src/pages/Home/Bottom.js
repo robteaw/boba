@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
 export default function Bottom() {
   return (
-    <div>Bottom</div>
-  )
+    <div>
+      <Card />
+    </div>
+  );
 }
-

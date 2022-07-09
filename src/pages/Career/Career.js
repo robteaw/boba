@@ -76,7 +76,7 @@ const Container = styled.div`
 const InnerContainer = styled.div`
   margin-top: 3rem;
   display: flex;
-  column-gap: 10rem;
+  column-gap: 5rem;
   h2,
   p {
     text-align: left;
@@ -84,6 +84,11 @@ const InnerContainer = styled.div`
   img {
     height: 23rem;
     width: 20rem;
+  }
+  @media (max-width: 825px) {
+    img {
+      display: none;
+    }
   }
 `;
 

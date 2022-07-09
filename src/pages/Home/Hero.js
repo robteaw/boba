@@ -39,19 +39,24 @@ const Container = styled.div`
   }
 
   button {
-    background-color: var(--btnColor);
-    font-weight: bold;
+    color: var(--subText);
+    background: var(--subColor);
+    font-size: 1rem;
+    font-weight: 600;
     height: 3rem;
-    width: 8rem;
-    border-radius: 50px;
+    width: 10rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
     cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      color: var(--subTextHover);
+      background: var(--subHover);
+      border: 2px solid var(--subTextHover);
+    }
   }
-
-  button:hover {
-    color: var(--textHover);
-    background-color: var(--btnHover);
-  }
-
   @media (min-width: 50em) {
     .grid-auto-flow {
       grid-auto-flow: column;

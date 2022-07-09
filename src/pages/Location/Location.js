@@ -87,11 +87,11 @@ const InnerContainer = styled.div`
     }
   }
   @media (max-width: 1024px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     iframe {
-      margin-bottom: 3rem;
+      margin-top: 3rem;
     }
   }
 `;

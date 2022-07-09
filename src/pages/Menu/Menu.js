@@ -92,4 +92,10 @@ const Container = styled.div`
   h2 {
     margin-top: 2rem;
   }
+  @media (max-width: 950px) {
+    .card_container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 `;
