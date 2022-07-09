@@ -33,23 +33,33 @@ export default function Navbar() {
         </MenuIcon>
       </div>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/about" onClick={closeMobileMenu} className="nav-links">About</Link>
+        <motion.li variants={linkAnim}>
+          <Link to="/about" onClick={closeMobileMenu} className="nav-links">
+            About
+          </Link>
         </motion.li>
-        <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/menu" onClick={closeMobileMenu} className="nav-links">Menu</Link>
+        <motion.li variants={linkAnim}>
+          <Link to="/menu" onClick={closeMobileMenu} className="nav-links">
+            Menu
+          </Link>
         </motion.li>
-        <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/location" onClick={closeMobileMenu} className="nav-links">Location</Link>
+        <motion.li variants={linkAnim}>
+          <Link to="/location" onClick={closeMobileMenu} className="nav-links">
+            Location
+          </Link>
         </motion.li>
-        <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/career" onClick={closeMobileMenu} className="nav-links">Career</Link>
+        <motion.li variants={linkAnim}>
+          <Link to="/career" onClick={closeMobileMenu} className="nav-links">
+            Career
+          </Link>
         </motion.li>
-        <motion.li variants={linkAnim} className="nav-item">
-          <Link to="/contact" onClick={closeMobileMenu} className="nav-links">Contact</Link>
+        <motion.li variants={linkAnim}>
+          <Link to="/contact" onClick={closeMobileMenu} className="nav-links">
+            Contact
+          </Link>
         </motion.li>
         <div className="cart">
-          <motion.li variants={linkAnim} className="nav-item">
+          <motion.li variants={linkAnim}>
             <Link to="/order" onClick={closeMobileMenu} className="nav-links">
               <FaShoppingCart />
             </Link>
@@ -75,7 +85,7 @@ const Nav = styled(motion.nav)`
   .nav-menu {
     display: flex;
     list-style-type: none;
-    gap: 2rem;
+    gap: 0 2rem;
     li {
       a {
         color: var(--navText);
@@ -111,42 +121,27 @@ const Nav = styled(motion.nav)`
       display: flex;
       flex-direction: column;
       width: 100%;
-      list-style: none;
       position: absolute;
       top: 4.375rem; /* removes the spacing in navbar and menu */
       left: -100%;
-      opacity: 1;
       transition: all 0.5s ease;
     }
-    .nav-menu active {
+    .nav-menu.active {
       background-color: var(--selectColor);
+      padding: 1.5rem;
       left: 0;
       transition: all 0.6s ease;
-      opacity: 1;
+      opacity: 98%;
       z-index: 999;
       outline: none;
       border: 0;
     }
     .nav-links {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       top: 0;
       width: 100%;
       display: table;
-    }
-    .nav-item {
-      text-align: center;
-      padding: 2rem;
-      top: 0;
-      width: 100%;
-      display: table;
-      
-      .nav-item:nth-child(1) {
-        margin-top: 3.5rem;
-      }
-      .nav-item:nth-child(5) {
-        margin-bottom: 100%;
-      }
     }
   }
 `;
