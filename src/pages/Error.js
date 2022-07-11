@@ -13,7 +13,7 @@ export default function Error() {
 
 // styling
 const Container = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   max-width: 1280px;
   margin: 3rem auto 5rem auto;

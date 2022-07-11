@@ -1,43 +1,48 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import HeroText from "./HeroText";
+import heroImg from "../../images/hero.png";
 import styled from "styled-components";
 
 export default function Hero() {
-  let navigate = useNavigate();
-
   return (
-    <Container>
-      <h1>Boba Drunk</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        voluptatum, eos illo in dolorem facere exercitationem quam pariatur vero
-        non?
-      </p>
-      <button
-        onClick={() => {
-          navigate("/menu");
-        }}
-      >
-        Menu
-      </button>
+    <Container
+      style={{
+        backgroundImage: `url(${heroImg})`,
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "darken",
+      }}
+    >
+      <div className="center">
+        <HeroText />
+      </div>
     </Container>
   );
 }
 
 // styling
 const Container = styled.div`
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.09);
   height: 60vh;
   width: 100%;
-  padding: 0 20%;
-  display: grid;
-  gap: 1rem;
-  grid-even-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  h1 {
-    color: blue;
+  .center {
+    color: var(--subText);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 60vh;
+    padding: 10rem 2rem;
   }
-
+  h1 {
+    /* color: var(--selectColor); */
+  }
+  h1,
+  p {
+    text-align: center;
+  }
   button {
     color: var(--subText);
     background: var(--subColor);
@@ -46,9 +51,10 @@ const Container = styled.div`
     height: 3rem;
     width: 10rem;
     padding: 0.7rem;
-    margin-top: 1rem;
+    margin: 2.5rem auto;
     border: 2px solid transparent;
     border-radius: 0.5rem;
+    display: block;
     cursor: pointer;
     transition: 0.4s;
     &:hover {
