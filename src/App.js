@@ -15,10 +15,12 @@ import Contact from "./pages/Contact/Contact";
 import Order from "./pages/Order/Order";
 import Footer from "./components/Footer";
 import Error from "./pages/Error"; // Error Page
+import ScrollToTop from "./components/ScrollToTop"; // Page stays on top when link clicked
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Top />
       <Navbar />
       <Routes>

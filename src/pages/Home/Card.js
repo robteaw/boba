@@ -34,7 +34,7 @@ export default function Card() {
         <div className="card">
           <img src={app} alt="" />
           <h2>App</h2>
-          <p>App releasing soon</p>
+          <p>Coming soon</p>
         </div>
       </div>
     </Container>
@@ -69,6 +69,9 @@ const Container = styled.div`
     border-radius: 10px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  .card p {
+    color: var(--subTextHover);
   }
   .card:hover {
     color: var(--navHover);
