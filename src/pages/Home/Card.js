@@ -1,24 +1,40 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import app from "../../images/app.png";
+import location from "../../images/location.png";
+import yellow from "../../images/boba_yellow.png";
 import styled from "styled-components";
 
 export default function Card() {
+  let navigate = useNavigate();
+
   return (
     <Container>
       <div className="card_container">
-        <div className="card">
-          <img src="" alt="" />
-          <h5>1</h5>
-          <p></p>
+        <div
+          className="card"
+          onClick={() => {
+            navigate("/location");
+          }}
+        >
+          <img src={location} alt="" />
+          <h2>Location</h2>
+          <p>Check out our shops</p>
+        </div>
+        <div
+          className="card"
+          onClick={() => {
+            navigate("/menu");
+          }}
+        >
+          <img src={yellow} alt="" />
+          <h2>Jackfruit</h2>
+          <p>Boba of the month</p>
         </div>
         <div className="card">
-          <img src="" alt="" />
-          <h5>2</h5>
-          <p></p>
-        </div>
-        <div className="card">
-          <img src="" alt="" />
-          <h5>3</h5>
-          <p></p>
+          <img src={app} alt="" />
+          <h2>App</h2>
+          <p>App releasing soon</p>
         </div>
       </div>
     </Container>
@@ -36,12 +52,15 @@ const Container = styled.div`
   .card_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 5rem;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
   .card {
+    color: var(--subTextHover);
+    background-color: var(--btnColor);
+    height: 100%;
     width: 15rem;
     padding: 2rem;
     cursor: pointer;
@@ -66,7 +85,7 @@ const Container = styled.div`
   h2 {
     margin-top: 2rem;
   }
-  @media (max-width: 950px) {
+  @media (max-width: 1050px) {
     .card_container {
       display: flex;
       flex-wrap: wrap;

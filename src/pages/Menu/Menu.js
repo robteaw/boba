@@ -3,6 +3,7 @@ import blue from "../../images/boba_blue.png";
 import brown from "../../images/boba_brown.png";
 import cyan from "../../images/boba_cyan.png";
 import green from "../../images/boba_green.png";
+import matcha from "../../images/boba_matcha.png";
 import pink from "../../images/boba_pink.png";
 import purple from "../../images/boba_purple.png";
 import red from "../../images/boba_red.png";
@@ -29,6 +30,10 @@ export default function Menu() {
         <div className="card">
           <img src={green} alt="" />
           <h2>Avocado</h2>
+        </div>
+        <div className="card">
+          <img src={matcha} alt="" />
+          <h2>Matcha</h2>
         </div>
         <div className="card">
           <img src={pink} alt="" />
@@ -62,12 +67,14 @@ const Container = styled.div`
   .card_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 5rem;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
   .card {
+    color: var(--subTextHover);
+    background-color: var(--btnColor);
     width: 15rem;
     padding: 2rem;
     cursor: pointer;

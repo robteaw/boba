@@ -79,7 +79,7 @@ const Nav = styled(motion.nav)`
   justify-content: space-around;
   align-items: center;
   padding: 0.3rem 4vw;
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 99;
   .nav-menu {
@@ -123,7 +123,7 @@ const Nav = styled(motion.nav)`
       width: 100%;
       position: absolute;
       top: 4rem; /* removes the spacing in navbar and menu */
-      left: -100%;
+      right: -100%;
       transition: all 0.5s ease;
     }
     .nav-menu.active {
