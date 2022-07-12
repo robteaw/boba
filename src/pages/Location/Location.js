@@ -74,7 +74,7 @@ const InnerContainer = styled.div`
   justify-content: center;
   iframe {
     height: 24rem;
-    width: 20rem;
+    width: 24rem;
   }
   h1 {
     margin-bottom: 1rem;

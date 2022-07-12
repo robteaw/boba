@@ -61,7 +61,7 @@ const Container = styled.div`
     color: var(--subTextHover);
     background-color: var(--btnColor);
     height: 100%;
-    width: 15rem;
+    width: 20rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;

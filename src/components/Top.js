@@ -25,8 +25,6 @@ export default function Top() {
 
 // styling
 const Container = styled.div`
-  position: sticky;
-
   button {
     color: var(--textColor2);
     background-color: transparent;

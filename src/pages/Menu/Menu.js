@@ -34,7 +34,7 @@ const Container = styled.div`
   .card {
     color: var(--subTextHover);
     background-color: var(--btnColor);
-    width: 15rem;
+    width: 20rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;

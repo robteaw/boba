@@ -45,12 +45,12 @@ export default function Navbar() {
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/location" onClick={closeMobileMenu} className="nav-links">
-            Location
+            Locations
           </Link>
         </motion.li>
         <motion.li variants={linkAnim}>
           <Link to="/career" onClick={closeMobileMenu} className="nav-links">
-            Career
+            Careers
           </Link>
         </motion.li>
         <motion.li variants={linkAnim}>
@@ -123,7 +123,7 @@ const Nav = styled(motion.nav)`
       width: 100%;
       position: absolute;
       top: 4rem; /* removes the spacing in navbar and menu */
-      right: -100%;
+      left: -100%;
       transition: all 0.5s ease;
     }
     .nav-menu.active {

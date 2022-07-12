@@ -8,7 +8,7 @@ export default function Career() {
 
   return (
     <Container>
-      <h1>Career</h1>
+      <h1>Careers</h1>
       <p>Are you an enthusiastic individual?</p>
       <p>Like working with people in a chill setting?</p>
       <p>Apply for our barista position below.</p>
