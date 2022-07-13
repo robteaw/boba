@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Boba from "./Boba";
-import Dessert from "./Dessert";
 import Search from "./Search";
 
 export default function Menu() {
@@ -9,16 +7,13 @@ export default function Menu() {
     <Container>
       <h1>Menu</h1>
       <Search />
-      <div className="card_container">
-        <Boba />
-        <Dessert />
-      </div>
     </Container>
   );
 }
 
 // styling
 const Container = styled.div`
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   max-width: 1280px;
@@ -26,6 +21,7 @@ const Container = styled.div`
   padding: 8rem 20%;
 
   .card_container {
+    width: 100%;
     margin: 5rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -63,7 +59,8 @@ const Container = styled.div`
   }
   // Search
   .search_bar {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     display: flex;
     margin: 0 auto;
   }
@@ -75,7 +72,6 @@ const Container = styled.div`
     padding: 0.75rem;
     appearance: none;
     outline: none;
-    /* border: none; */
     border-radius: 0.5rem 0 0 0.5rem;
     transition: 0.4s;
     &:focus {
@@ -98,7 +94,7 @@ const Container = styled.div`
       border: 2px solid var(--subTextHover);
     }
   }
-  @media (max-width: 1050px) {
+  @media (max-width: 1250px) {
     .card_container {
       display: flex;
       flex-wrap: wrap;

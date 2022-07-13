@@ -64,10 +64,4 @@ const Container = styled.div`
       border: 2px solid var(--subColor);
     }
   }
-  @media (min-width: 50em) {
-    .grid-auto-flow {
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
-    }
-  }
 `;
