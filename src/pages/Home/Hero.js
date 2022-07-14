@@ -54,7 +54,7 @@ const Container = styled.div`
     width: 10rem;
     padding: 0.7rem;
     margin: 2.5rem auto;
-    border-radius: 0.5rem;
+    border-radius: 5rem;
     display: block;
     cursor: pointer;
     transition: 0.4s;

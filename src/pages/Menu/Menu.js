@@ -18,7 +18,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto 5rem auto;
-  padding: 8rem 20%;
+  padding: 8rem 10%;
 
   .card_container {
     width: 100%;
@@ -59,39 +59,48 @@ const Container = styled.div`
   }
   // Search
   .search_bar {
+    background-color: var(--inputColor);
     width: 100%;
     max-width: 20rem;
     display: flex;
     margin: 0 auto;
+    padding: 0.25rem;
+    align-items: center;
+    border-radius: 0.5rem 0.5rem;
+    &:focus {
+      background-color: var(--subText);
+      appearance: none;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    }
   }
   input {
-    background-color: #f3f3f3;
+    background-color: var(--inputColor);
     width: 100%;
     display: block;
     margin: 0 auto;
     padding: 0.75rem;
     appearance: none;
+    border: none;
     outline: none;
-    border-radius: 0.5rem 0 0 0.5rem;
     transition: 0.4s;
     &:focus {
+      background-color: var(--subText);
+      appearance: none;
       box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
     }
   }
-  .search_btn {
-    color: var(--subText);
-    background-color: var(--subColor);
-    height: 100%;
-    width: 3rem;
-    margin: 0 auto;
-    padding: 0.75rem;
-    border: 2px solid transparent;
-    border-radius: 0 0.5rem 0.5rem 0;
+  .search_icon {
+    color: var(--selectColor);
+    font-size: 1rem;
+    padding: 0 0.75rem;
+    display: flex;
+  }
+  .delete {
+    color: var(--selectColor);
+    padding-right: 1rem;
     cursor: pointer;
     &:hover {
-      color: var(--subTextHover);
-      background: var(--subHover);
-      border: 2px solid var(--subTextHover);
+      color: var(--navHover);
     }
   }
   @media (max-width: 1250px) {

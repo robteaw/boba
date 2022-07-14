@@ -82,7 +82,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 5rem 20%;
+  padding: 8rem 15%;
   align-items: center;
   text-align: center;
   p {
@@ -123,6 +123,12 @@ const InnerContainer = styled.div`
       margin: 0.5rem 0;
       padding: 0.75rem;
       border-radius: 0.5rem;
+    }
+    input:focus {
+      background-color: var(--subText);
+    }
+    textarea:focus {
+      background-color: var(--subText);
     }
     .form-text {
       grid-column: 1 / -1;
@@ -173,7 +179,7 @@ const File = styled.div`
     width: 8rem;
     padding: 0.7rem;
     border: 2px solid var(--subTextHover);
-    border-radius: 0.5rem;
+    border-radius: 5rem;
     cursor: pointer;
     transition: 0.4s;
     &:hover {
@@ -196,7 +202,7 @@ const Submit = styled.div`
     padding: 0.7rem;
     margin-top: 1rem;
     border: 2px solid transparent;
-    border-radius: 0.5rem;
+    border-radius: 5rem;
     cursor: pointer;
     transition: 0.4s;
     &:hover {

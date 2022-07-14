@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import Data from "./Data";
 
 export default function Search() {
+  // Filter search
   const [filter, setFilter] = useState("");
 
   const searchText = (event) => {
@@ -17,18 +18,24 @@ export default function Search() {
     );
   });
 
+  // Delete search
+  const [remove, setRemove] = useState(false);
+  const removeType = () => setRemove(!remove);
+
   return (
     <>
       <div className="search_bar">
-        <input
-          type="text"
-          placeholder="Search"
-          value={filter}
-          onChange={searchText.bind(this)}
-        />
-        <div className="search_btn">
+        <div className="search_icon">
           <FaSearch />
         </div>
+        <input
+          type="text"
+          placeholder=" Search"
+          value={filter}
+          onChange={searchText.bind(this)}
+          onClick={removeType}
+        />
+        {remove ? <span className="delete">&#10006;</span> : ""}
       </div>
       <div className="card_container">
         {dataSearch.map((item, index) => {

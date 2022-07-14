@@ -27,10 +27,10 @@ const Container = styled.div`
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1280px;
   display: flex;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 8rem 10%;
   align-items: center;
   justify-content: center;
   column-gap: 10rem;
@@ -43,6 +43,11 @@ const Container = styled.div`
   }
   @media (max-width: 1024px) {
     flex-direction: column;
+  }
+  @media (max-width: 825px) {
+    img {
+      display: none;
+    }
   }
 `;
 
