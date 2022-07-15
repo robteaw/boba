@@ -97,7 +97,7 @@ const Container = styled.div`
   }
   .delete {
     color: var(--selectColor);
-    padding-right: 1rem;
+    padding: 0 0.75rem;
     cursor: pointer;
     &:hover {
       color: var(--navHover);

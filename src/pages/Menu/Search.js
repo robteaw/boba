@@ -18,9 +18,10 @@ export default function Search() {
     );
   });
 
-  // Delete search
-  const [remove, setRemove] = useState(false);
-  const removeType = () => setRemove(!remove);
+  // Clear search
+  const clearInput = () => {
+    setFilter("");
+  };
 
   return (
     <>
@@ -33,9 +34,10 @@ export default function Search() {
           placeholder=" Search"
           value={filter}
           onChange={searchText.bind(this)}
-          onClick={removeType}
         />
-        {remove ? <span className="delete">&#10006;</span> : ""}
+        <span className="delete" onClick={clearInput}>
+          &#10006;
+        </span>
       </div>
       <div className="card_container">
         {dataSearch.map((item, index) => {
