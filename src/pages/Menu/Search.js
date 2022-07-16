@@ -6,8 +6,8 @@ export default function Search() {
   // Filter search
   const [filter, setFilter] = useState("");
 
-  const searchText = (event) => {
-    setFilter(event.target.value);
+  const searchText = (e) => {
+    setFilter(e.target.value);
   };
   let dataSearch = Data.cardData.filter((item) => {
     return Object.keys(item).some((key) =>

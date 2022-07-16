@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function Contact() {
+  // Format phone number
+  const [inputValue, setInputValue] = useState("")
+  const handleInput = e => {
+    const formattedPhone = formatPhone(e.target.value);
+    setInputValue(formattedPhone);
+  }
+
+  function formatPhone(value) {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length + 1;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6,)}-${phoneNumber.slice(6, 10)}`
+  }
+
   return (
     <Container>
       <h1>Contact</h1>
@@ -38,10 +56,12 @@ export default function Contact() {
           </div>
           <div>
             <input
-              type="text"
+              type="tel"
               placeholder="Phone Number"
               required
               class="form-element"
+              onChange={e => handleInput(e)} 
+              value={inputValue}
             />
           </div>
           <Reason>
