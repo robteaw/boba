@@ -53,7 +53,7 @@ export default function Contact() {
           </div>
           <div>
             <input
-              type="text"
+              type="email"
               placeholder="Email"
               required
               className="form-element"
