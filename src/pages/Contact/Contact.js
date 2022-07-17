@@ -48,7 +48,7 @@ export default function Contact() {
               placeholder="Last Name"
               required
               class="form-element"
-              id="SecondName"
+              id="lastName"
             />
           </div>
           <div>
