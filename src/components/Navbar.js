@@ -9,14 +9,37 @@ import { logoAnim, linkAnim } from "../animations";
 import { useScroll } from "../components/useScroll";
 
 export default function Navbar() {
+  // Setting nav mobile
   const [element, controls] = useScroll();
   const [click, setClick] = useState(false);
 
+  // Close nav menu
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  // Change nav color
+  const [color, setColor] = useState(false);
+  const [icon, setIcon] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 65) {
+      setColor(true);
+      setIcon(true);
+    } else {
+      setColor(false);
+      setIcon(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
+
   return (
-    <Nav as={motion.nav} initial="hidden" animate={controls} ref={element}>
+    <Nav
+      as={motion.nav}
+      initial="hidden"
+      animate={controls}
+      ref={element}
+      className={color ? "navbar nav-scroll" : "navbar"}
+    >
       <div className="brand">
         <Link to="/">
           <Logo
@@ -28,7 +51,10 @@ export default function Navbar() {
             onClick={closeMobileMenu}
           />
         </Link>
-        <MenuIcon onClick={handleClick}>
+        <MenuIcon
+          onClick={handleClick}
+          className={icon ? "icon icon-scroll" : "icon"}
+        >
           {click ? <FaTimes /> : <FaBars />}
         </MenuIcon>
       </div>
@@ -71,8 +97,7 @@ export default function Navbar() {
 }
 
 // styling
-const Nav = styled(motion.nav)`
-  background-color: var(--navBg);
+const Nav = styled.nav`
   height: 65px;
   width: 100%;
   display: flex;
@@ -88,7 +113,6 @@ const Nav = styled(motion.nav)`
     gap: 0 2rem;
     li {
       a {
-        color: var(--navText);
         font-family: "proxima-nova", sans-serif;
         font-size: 0.9rem;
         font-weight: 600;
@@ -115,8 +139,10 @@ const Nav = styled(motion.nav)`
     }
   }
   @media (max-width: 1100px) {
-    position: relative;
-
+    .navbar {
+      height: 65px;
+      position: relative;
+    }
     .nav-menu {
       display: flex;
       flex-direction: column;
@@ -160,10 +186,10 @@ const Logo = styled.img`
 `;
 
 const MenuIcon = styled.div`
+  color: var(--subColor);
   display: none;
 
   @media (max-width: 1100px) {
-    color: var(--subColor);
     display: block;
     position: absolute;
     top: 0;

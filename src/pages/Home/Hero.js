@@ -32,13 +32,13 @@ const Container = styled.div`
   align-items: center;
 
   .center {
-    color: var(--btnColor);
+    color: var(--textColor2);
     background-color: rgba(0, 0, 0, 0.3);
     min-height: 60vh;
     padding: 10rem 2rem;
   }
   h1 {
-    color: var(--subText);
+    color: var(--herotext);
   }
   h1,
   p {
