@@ -32,47 +32,51 @@ export default function Contact() {
         provide a short introduction. We'll respond as soon as possible.
       </p>
       <InnerContainer>
-        <form action="/contact" name="contact" method="post" onSubmit="submit">
+        <form action="/contact" name="contact" method="POST" onSubmit="submit">
           <div>
             <input
               type="text"
-              placeholder="First Name"
-              required
-              class="form-element"
+              name="firstName"
               id="firstName"
+              placeholder="First Name"
+              class="form-element"
+              required
             />
           </div>
           <div>
             <input
               type="text"
-              placeholder="Last Name"
-              required
-              class="form-element"
+              name="lastName"
               id="lastName"
+              placeholder="Last Name"
+              class="form-element"
+              required
             />
           </div>
           <div>
             <input
               type="email"
-              placeholder="Email"
-              required
-              className="form-element"
+              name="email"
               id="email"
+              placeholder="Email"
+              className="form-element"
+              required
             />
           </div>
           <div>
             <input
               type="tel"
+              name="phoneNumber"
+              id="phoneNumber"
               placeholder="Phone Number"
-              required
               class="form-element"
+              required
               onChange={(e) => handleInput(e)}
               value={inputValue}
-              id="phoneNumber"
             />
           </div>
           <Reason>
-            <select name="work" id="work">
+            <select name="reason" id="reason">
               <option disabled selected>
                 Reason
               </option>
@@ -87,10 +91,10 @@ export default function Contact() {
           <div class="form-text">
             <textarea
               name="message"
-              required
-              class="form-element"
               id="message"
               placeholder="Message"
+              class="form-element"
+              required
             ></textarea>
           </div>
           <Submit>
