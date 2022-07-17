@@ -32,13 +32,14 @@ export default function Contact() {
         provide a short introduction. We'll respond as soon as possible.
       </p>
       <InnerContainer>
-        <form action="">
+        <form action="/contact" name="contact" method="post" onSubmit="submit">
           <div>
             <input
               type="text"
               placeholder="First Name"
               required
               class="form-element"
+              id="firstName"
             />
           </div>
           <div>
@@ -47,6 +48,7 @@ export default function Contact() {
               placeholder="Last Name"
               required
               class="form-element"
+              id="SecondName"
             />
           </div>
           <div>
@@ -55,6 +57,7 @@ export default function Contact() {
               placeholder="Email"
               required
               className="form-element"
+              id="email"
             />
           </div>
           <div>
@@ -65,6 +68,7 @@ export default function Contact() {
               class="form-element"
               onChange={(e) => handleInput(e)}
               value={inputValue}
+              id="phoneNumber"
             />
           </div>
           <Reason>
@@ -78,14 +82,14 @@ export default function Contact() {
             </select>
           </Reason>
           <File>
-            <input type="file" id="myFile" name="filename" />
+            <input type="file" id="resume" name="resume" />
           </File>
           <div class="form-text">
             <textarea
               name="message"
-              id="message"
               required
               class="form-element"
+              id="message"
               placeholder="Message"
             ></textarea>
           </div>
