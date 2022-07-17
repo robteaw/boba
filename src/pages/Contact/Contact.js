@@ -23,6 +23,11 @@ export default function Contact() {
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
+  // Form submit stays on same page
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Container>
       <h1>Contact</h1>
@@ -32,7 +37,12 @@ export default function Contact() {
         provide a short introduction. We'll respond as soon as possible.
       </p>
       <InnerContainer>
-        <form action="/contact" name="contact" method="POST" onSubmit="submit">
+        <form
+          action="/contact"
+          name="contact"
+          method="POST"
+          onSubmit={onSubmit}
+        >
           <input type="hidden" name="form-name" value="contact" />
           <div>
             <input
@@ -87,7 +97,7 @@ export default function Contact() {
             </select>
           </Reason>
           <File>
-            <input type="file" id="resume" name="resume" />
+            <input type="file" name="resume" id="resume" />
           </File>
           <div class="form-text">
             <textarea
