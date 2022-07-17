@@ -33,6 +33,7 @@ export default function Contact() {
       </p>
       <InnerContainer>
         <form action="/contact" name="contact" method="POST" onSubmit="submit">
+          <input type="hidden" name="form-name" value="contact" />
           <div>
             <input
               type="text"
