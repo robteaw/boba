@@ -28,6 +28,10 @@ export default function Contact() {
     e.preventDefault();
   };
 
+  // Submit message
+  const [message, setMessage] = useState(false);
+  const showMessage = () => setMessage(!message);
+
   return (
     <Container>
       <h1>Contact</h1>
@@ -109,7 +113,13 @@ export default function Contact() {
             ></textarea>
           </div>
           <Submit>
-            <input type="submit" value="SEND" />
+            {message ? (
+              <span className="message">
+                <h2>Form Submitted!</h2>
+              </span>
+            ) : (
+              <input type="submit" value="SEND" onClick={showMessage} />
+            )}
           </Submit>
         </form>
       </InnerContainer>
@@ -252,5 +262,10 @@ const Submit = styled.div`
       background: var(--subHover);
       border: 2px solid var(--subTextHover);
     }
+  }
+  .message {
+    color: var(--messageColor);
+    font-weight: bold;
+    transition: 0.4s;
   }
 `;

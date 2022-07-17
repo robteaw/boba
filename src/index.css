@@ -24,6 +24,7 @@
   --subTextHover: #4B0082;
   --selectColor: #b09cbd;
   --inputColor: #f3f3f3;
+  --messageColor: #008000;
 }
 html {
   scroll-behavior: smooth;
