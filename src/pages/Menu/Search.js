@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import Button from "./Button";
 import Data from "./Data";
 
 export default function Search() {
@@ -40,11 +41,12 @@ export default function Search() {
         </span>
       </div>
       <div className="card_container">
-        {dataSearch.map((item, index) => {
+        {dataSearch.map((item) => {
           return (
             <div className="card">
               <img src={item.img} alt="" />
               <h2>{item.title}</h2>
+              <Button />
             </div>
           );
         })}

@@ -57,6 +57,21 @@ const Container = styled.div`
   h2 {
     margin-top: 2rem;
   }
+  // Button
+  .add {
+    color: var(--subColor);
+    background-color: var(--navHover);
+    font-weight: bold;
+    width: 8rem;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--subText);
+      background-color: var(--subColor);
+    }
+  }
   // Search
   .search_bar {
     background-color: var(--inputColor);

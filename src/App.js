@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 import Error from "./pages/Error"; // Error Page
 import ScrollToTop from "./components/ScrollToTop"; // Page stays on top when link clicked
 
-export default function App() {
+export default function App({ cartItems }) {
   return (
     <Router>
       <ScrollToTop />
@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/location" element={<Location />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="/order" element={<Order />} cartItems={cartItems} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
