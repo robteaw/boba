@@ -47,8 +47,15 @@ const Container = styled.div`
     border-radius: 2.5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+  .card:hover .add {
+    display:block;
+  }
   .card p {
     color: var(--subTextHover);
+    margin: 1rem auto;
+  }
+  .card:hover p {
+    display: none;
   }
   img {
     height: 10rem;
@@ -58,7 +65,7 @@ const Container = styled.div`
     margin-bottom: 3rem;
   }
   h2 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   // Button
   .add {
@@ -66,8 +73,9 @@ const Container = styled.div`
     background-color: var(--navHover);
     font-weight: bold;
     width: 8rem;
-    margin: 1rem auto;
-    padding: 0.5rem;
+    margin: .5rem auto;
+    padding: 0.8rem;
+    display: none; // hides button initially
     border-radius: 5rem;
     cursor: pointer;
     &:hover {
