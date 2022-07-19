@@ -12,12 +12,12 @@ import Menu from "./pages/Menu/Menu";
 import Location from "./pages/Location/Location";
 import Career from "./pages/Career/Career";
 import Contact from "./pages/Contact/Contact";
-import Order from "./pages/Order/Order";
+import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer";
 import Error from "./pages/Error"; // Error Page
 import ScrollToTop from "./components/ScrollToTop"; // Page stays on top when link clicked
 
-export default function App({ cartItems }) {
+export default function App() {
   return (
     <Router>
       <ScrollToTop />
@@ -30,7 +30,7 @@ export default function App({ cartItems }) {
         <Route path="/location" element={<Location />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/order" element={<Order />} cartItems={cartItems} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

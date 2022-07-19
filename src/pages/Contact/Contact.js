@@ -137,6 +137,9 @@ const Container = styled.div`
   padding: 8rem 15%;
   align-items: center;
   text-align: center;
+  h1 {
+    margin-bottom: 20px;
+  }
   p {
     margin-bottom: 1.5rem;
     text-align: left;

@@ -48,6 +48,7 @@ const Container = styled.div`
   justify-content: center;
   h1 {
     text-align: center;
+    margin-bottom: 20px;
   }
   p {
     text-align: center;
