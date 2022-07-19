@@ -47,6 +47,9 @@ const Container = styled.div`
     border-radius: 2.5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+  .card p {
+    color: var(--subTextHover);
+  }
   img {
     height: 10rem;
   }

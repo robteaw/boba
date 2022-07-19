@@ -4,7 +4,7 @@ import logo from "../images/logo.png";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa"; // npm install react-icons --save
 import styled from "styled-components";
 // Animation
-import { motion } from "framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 import { logoAnim, linkAnim } from "../animations";
 import { useScroll } from "../components/useScroll";
 

@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import useCart from "react-use-cart";
 
 export default function Cart() {
-  // const {item} = useCart();
-
   return (
     <Container>
       <h1>Shopping Cart</h1>

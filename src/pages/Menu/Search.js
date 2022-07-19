@@ -46,6 +46,7 @@ export default function Search() {
             <div className="card">
               <img src={item.img} alt="" />
               <h2>{item.title}</h2>
+              <p>${item.price.toFixed(2)}</p>
               <Button />
             </div>
           );
