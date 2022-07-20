@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className="cart">
           <motion.li variants={linkAnim}>
             <Link to="/cart" onClick={closeMobileMenu} className="nav-links">
-              <FaShoppingCart />
+              <FaShoppingCart /> Cart
             </Link>
           </motion.li>
         </div>
