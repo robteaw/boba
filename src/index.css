@@ -25,6 +25,7 @@
   --selectColor: #b09cbd;
   --inputColor: #f3f3f3;
   --messageColor: #008000;
+  --cartColor: #4B0082;
 }
 html {
   scroll-behavior: smooth;

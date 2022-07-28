@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className="cart">
           <motion.li variants={linkAnim}>
             <Link to="/cart" onClick={closeMobileMenu} className="nav-links">
-              <FaShoppingCart /> Cart
+              <span className="cart"><FaShoppingCart /> 1</span>
             </Link>
           </motion.li>
         </div>
@@ -124,17 +124,11 @@ const Nav = styled.nav`
         transition: 0.3s ease-in-out;
         &:hover {
           color: var(--navHover);
-          .cart {
-            align-items: right;
-            justify-content: right;
-          }
         }
-      }
-      .nav-item {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
+        .cart {
+          align-items: right;
+          justify-content: right;
+        }
       }
     }
   }
