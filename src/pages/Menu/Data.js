@@ -11,7 +11,7 @@ import cake from "../../images/cake.png";
 import cupcake from "../../images/cupcake.png";
 import macaron from "../../images/macaron.png";
 
-const data = {
+const products = {
   cardData: [
     { id: 1, img: green, title: "Avocado", price: 5.5 },
     { id: 2, img: blue, title: "Blueberry", price: 5.5 },
@@ -26,6 +26,8 @@ const data = {
     { id: 11, img: cupcake, title: "Cupcake", price: 2.0 },
     { id: 12, img: macaron, title: "Macaron", price: 3.0 },
   ],
+  cart: [],
+  currentItem: null,
 };
 
-export default data;
+export default products;
