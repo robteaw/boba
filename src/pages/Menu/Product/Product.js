@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import Button from "./Button";
-import Data from "./Data";
+import Button from "../Button";
+import Data from "../Data";
+import { connect } from "react-redux";
+import { addToCart } from "../../../redux/Shopping/shopping-actions";
 
-export default function Search() {
+export default function Product({ productData, addToCart }) {
   // Filter search
   const [filter, setFilter] = useState("");
 
@@ -47,7 +49,7 @@ export default function Search() {
               <img src={item.img} alt="" />
               <h2>{item.title}</h2>
               <p>${item.price.toFixed(2)}</p>
-              <Button />
+              <Button onClick={() => addToCart(productData.id)} />
             </div>
           );
         })}
@@ -55,3 +57,12 @@ export default function Search() {
     </>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+    // loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
+  };
+};
+
+connect(null, mapDispatchToProps)(Product);

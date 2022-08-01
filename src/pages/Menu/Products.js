@@ -1,22 +1,38 @@
 import React from "react";
-import styled from "styled-components";
-import Menu from "./Menu";
-import Search from "./Search";
-import {connect} from 'react-redux';
+import Product from "./Product/Product";
+import Data from "./../Data";
+import { connect } from "react-redux";
 
-function Products({products}) {
+export default function Products({ item }) {
+  // Filter search
+  const [filter, setFilter] = useState("");
+
+  const searchText = (e) => {
+    setFilter(e.target.value);
+  };
+  let dataSearch = Data.cardData.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    );
+  });
+
   return (
     <Container>
       <h1>Menu</h1>
-      <Search />
+      {dataSearch.map((item) => {
+        <Product key={item.id} cardData={item} />;
+      })}
     </Container>
   );
 }
 
 const mapStateToProps = (state) => {
-  return (
-    products: state.shop.products,
-  )
-}
+  return {
+    dataSearch: state.shop.item,
+  };
+};
 
-export default connect(mapStateToProps)(Menu);
+connect(mapStateToProps)(Products);

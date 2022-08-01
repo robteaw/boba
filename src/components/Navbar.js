@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa"; // npm install react-icons --save
 import styled from "styled-components";
+import { connect } from "react-redux";
 // Animation
 import { motion } from "framer-motion/dist/framer-motion";
 import { logoAnim, linkAnim } from "../animations";
 import { useScroll } from "../components/useScroll";
 
-export default function Navbar() {
+export default function Navbar({ cart }) {
   // Setting nav mobile
   const [element, controls] = useScroll();
   const [click, setClick] = useState(false);
@@ -31,6 +32,17 @@ export default function Navbar() {
   };
 
   window.addEventListener("scroll", changeColor);
+
+  // Cart total
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+    setCartCount(count);
+  }, [cart, cartCount]);
 
   return (
     <Nav
@@ -87,7 +99,9 @@ export default function Navbar() {
         <div className="cart">
           <motion.li variants={linkAnim}>
             <Link to="/cart" onClick={closeMobileMenu} className="nav-links">
-              <span className="cart"><FaShoppingCart /> 1</span>
+              <span className="cart">
+                <FaShoppingCart /> {cartCount}
+              </span>
             </Link>
           </motion.li>
         </div>
@@ -95,6 +109,14 @@ export default function Navbar() {
     </Nav>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+
+connect(mapStateToProps)(Navbar);
 
 // styling
 const Nav = styled.nav`

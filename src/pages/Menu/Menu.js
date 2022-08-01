@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Search from "./Search";
+import Product from "./Product/Product";
 
 export default function Menu() {
   return (
     <Container>
       <h1>Menu</h1>
-      <Search />
+      <Product />
     </Container>
   );
 }
@@ -44,11 +44,10 @@ const Container = styled.div`
   }
   .card:hover {
     color: var(--navHover);
-    border-radius: 2.5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
   .card:hover .add {
-    display:block;
+    display: block;
   }
   .card p {
     color: var(--subTextHover);
@@ -73,7 +72,7 @@ const Container = styled.div`
     background-color: var(--navHover);
     font-weight: bold;
     width: 8rem;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
     padding: 0.8rem;
     display: none; // hides button initially
     border-radius: 5rem;
