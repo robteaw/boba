@@ -1,4 +1,16 @@
 import * as actionTypes from "./shopping-types";
+import blue from "../../images/boba_blue.png";
+import brown from "../../images/boba_brown.png";
+import cyan from "../../images/boba_cyan.png";
+import green from "../../images/boba_green.png";
+import matcha from "../../images/boba_matcha.png";
+import pink from "../../images/boba_pink.png";
+import purple from "../../images/boba_purple.png";
+import red from "../../images/boba_red.png";
+import yellow from "../../images/boba_yellow.png";
+import cake from "../../images/cake.png";
+import cupcake from "../../images/cupcake.png";
+import macaron from "../../images/macaron.png";
 
 const INITIAL_STATE = {
   products: [

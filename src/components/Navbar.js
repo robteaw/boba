@@ -9,7 +9,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { logoAnim, linkAnim } from "../animations";
 import { useScroll } from "../components/useScroll";
 
-export default function Navbar({ cart }) {
+const Navbar = ({ cart }) => {
   // Setting nav mobile
   const [element, controls] = useScroll();
   const [click, setClick] = useState(false);
@@ -116,7 +116,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbar);
 
 // styling
 const Nav = styled.nav`

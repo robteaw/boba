@@ -5,7 +5,7 @@ import Data from "../Data";
 import { connect } from "react-redux";
 import { addToCart } from "../../../redux/Shopping/shopping-actions";
 
-export default function Product({ productData, addToCart }) {
+const Product = ({ product, addToCart }) => {
   // Filter search
   const [filter, setFilter] = useState("");
 
@@ -49,7 +49,7 @@ export default function Product({ productData, addToCart }) {
               <img src={item.img} alt="" />
               <h2>{item.title}</h2>
               <p>${item.price.toFixed(2)}</p>
-              <Button onClick={() => addToCart(productData.id)} />
+              <Button onClick={() => addToCart(product.id)} />
             </div>
           );
         })}
@@ -65,4 +65,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-connect(null, mapDispatchToProps)(Product);
+export default connect(null, mapDispatchToProps)(Product);
