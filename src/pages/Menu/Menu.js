@@ -33,6 +33,7 @@ const Container = styled.div`
   .card {
     color: var(--subTextHover);
     background-color: var(--btnColor);
+    height: 100%;
     width: 20rem;
     padding: 2rem;
     cursor: pointer;
@@ -64,7 +65,7 @@ const Container = styled.div`
     margin-bottom: 3rem;
   }
   h2 {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
   // Button
   .add {
@@ -72,10 +73,11 @@ const Container = styled.div`
     background-color: var(--navHover);
     font-weight: bold;
     width: 8rem;
-    margin: 0.5rem auto;
+    margin: 0 auto;
     padding: 0.8rem;
     display: none; // hides button initially
     border-radius: 5rem;
+    user-select: none;
     cursor: pointer;
     &:hover {
       color: var(--subText);

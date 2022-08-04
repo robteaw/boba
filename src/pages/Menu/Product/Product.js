@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import Button from "../Button";
 import Data from "../Data";
 import { connect } from "react-redux";
 import { addToCart } from "../../../redux/Shopping/shopping-actions";
@@ -43,20 +42,22 @@ const Product = ({ product, addToCart }) => {
         </span>
       </div>
       <div className="card_container">
-        {dataSearch.map((item) => {
+        {dataSearch.map((product) => {
           return (
             <div className="card">
-              <img src={item.img} alt="" />
-              <h2>{item.title}</h2>
-              <p>${item.price.toFixed(2)}</p>
-              <Button onClick={() => addToCart(product.id)} />
+              <img src={product.img} alt="" />
+              <h2>{product.title}</h2>
+              <p>${product.price.toFixed(2)}</p>
+              <span className="add" onClick={() => addToCart(product.id)}>
+                Add to Cart
+              </span>
             </div>
           );
         })}
       </div>
     </>
   );
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

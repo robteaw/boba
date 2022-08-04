@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import styled from "styled-components";
 import { connect } from "react-redux";
@@ -27,9 +27,14 @@ const Cart = ({ cart }) => {
       {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
+      <div>
+        <p>Total: ({totalItems} items)</p>
+        <p>$ {totalPrice}</p>
+        <button>Checkout</button>
+      </div>
     </Container>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -51,5 +56,23 @@ const Container = styled.div`
   p {
     margin: 20px 0 32px 0;
     line-height: 2;
+  }
+  button {
+    color: var(--subText);
+    background: var(--subColor);
+    font-size: 1rem;
+    font-weight: 600;
+    width: 10rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    border: 2px solid transparent;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      color: var(--subTextHover);
+      background: var(--subHover);
+      border: 2px solid var(--subTextHover);
+    }
   }
 `;
