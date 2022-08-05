@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import Data from "../Data";
 import { connect } from "react-redux";
-import { addToCart, loadCurrentItem } from "../../../redux/Shopping/shopping-actions";
+import {
+  addToCart,
+  loadCurrentItem,
+} from "../../../redux/Shopping/shopping-actions";
 
 const Product = ({ product, addToCart, loadCurrentItem }) => {
   let navigate = useNavigate();
@@ -49,15 +52,19 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
           return (
             <div className="card">
               <img src={product.img} alt="" />
-                <h2>{product.title}</h2>
-                <p>${product.price.toFixed(2)}</p>
-                <span className="view" onClick={() => {
+              <h2>{product.title}</h2>
+              <p>${product.price.toFixed(2)}</p>
+              <span className="add" onClick={() => addToCart(product.id)}>
+                Add to Cart
+              </span>
+              <span
+                className="view"
+                onClick={() => {
                   navigate("/cart");
-                }}>View Cart
-                </span>
-                <span className="add" onClick={() => addToCart(product.id)}>
-                  Add to Cart
-                </span>
+                }}
+              >
+                View Cart
+              </span>
             </div>
           );
         })}

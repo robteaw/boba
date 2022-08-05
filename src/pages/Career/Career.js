@@ -63,7 +63,7 @@ const Container = styled.div`
     margin: 1.5rem auto 5rem auto;
     display: block;
     border: 2px solid transparent;
-    border-radius: 0.5rem;
+    border-radius: 5rem;
     cursor: pointer;
     transition: 0.4s;
     &:hover {

@@ -34,6 +34,7 @@ const Container = styled.div`
     color: var(--subTextHover);
     background-color: var(--btnColor);
     height: 100%;
+    min-height: 23rem;
     width: 20rem;
     padding: 2rem;
     cursor: pointer;
@@ -49,7 +50,10 @@ const Container = styled.div`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
   .card:hover .add {
-    display: block;
+    display: block; // display on hover
+  }
+  .card:hover .view {
+    display: block; // display on hover
   }
   .card p {
     color: var(--subTextHover);
@@ -59,7 +63,7 @@ const Container = styled.div`
     display: none;
   }
   img {
-    height: 10rem;
+    height: 8rem;
     user-select: none;
   }
   h1 {
@@ -70,7 +74,7 @@ const Container = styled.div`
     margin: 1.5rem 0;
   }
   .card:hover h2 {
-    // display: none;
+    display: none;
   }
   // Button
   .view {
@@ -81,8 +85,9 @@ const Container = styled.div`
     width: 8rem;
     padding: 0.7rem;
     margin: 1.5rem auto;
-    display: none; // hides button initially
     border-radius: 5rem;
+    user-select: none;
+    display: none; // hides button initially
     cursor: pointer;
     &:hover {
       color: var(--subText);
@@ -95,11 +100,11 @@ const Container = styled.div`
     background-color: var(--navHover);
     font-weight: bold;
     width: 8rem;
-    margin: 0 auto;
+    margin: 1.5rem auto;
     padding: 0.7rem;
-    display: none; // hides button initially
     border-radius: 5rem;
     user-select: none;
+    display: none; // hides button initially
     cursor: pointer;
     &:hover {
       color: var(--subText);

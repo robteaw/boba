@@ -28,25 +28,29 @@ const Cart = ({ cart }) => {
     <Container>
       <h1>Shopping Cart</h1>
       <div className="inner-container">
-        {totalItems === 0 ?  (<div className="empty"><p>Your cart is empty.</p><button onClick={() => navigate("/menu")}>View Menu</button></div>
+        {totalItems === 0 ? (
+          <div className="empty">
+            <p>Your cart is empty.</p>
+            <button onClick={() => navigate("/menu")}>View Menu</button>
+          </div>
         ) : (
-      <>
-      <div>
-          {cart.map((item) => (
-            <CartItem key={item.id} item={item} />
-          ))}
-        </div>
-        <div className="total">
-          <p>
-            <b>Items:</b> {totalItems}
-          </p>
-          <p>
-            <b>Total:</b> ${totalPrice.toFixed(2)}
-          </p>
-          <button>Checkout</button>
-        </div></>
-        )
-      }
+          <>
+            <div>
+              {cart.map((item) => (
+                <CartItem key={item.id} item={item} />
+              ))}
+            </div>
+            <div className="total">
+              <p>
+                <b>Items:</b> {totalItems}
+              </p>
+              <p>
+                <b>Total:</b> ${totalPrice.toFixed(2)}
+              </p>
+              <button>Checkout</button>
+            </div>
+          </>
+        )}
       </div>
     </Container>
   );
@@ -82,9 +86,6 @@ const Container = styled.div`
   }
   .total {
     margin-top: 5rem;
-    position: fixed;
-    position: -webkit-sticky;
-    top: 0;
     p {
       margin: 1.5rem 0;
       text-align: left;
