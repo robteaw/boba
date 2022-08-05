@@ -24,10 +24,6 @@ const Cart = ({ cart }) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
-  // If cart is empty
-  const [cartAppear, setCartAppear] = useState(false);
-  const showCart = () => setCartAppear(!cartAppear);
-
   return (
     <Container>
       <h1>Shopping Cart</h1>
