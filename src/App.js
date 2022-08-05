@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes, // Switch has been replaced with Routes
   Route,
-  Navigate,
 } from "react-router-dom"; // npm i react-router-dom
 import Top from "./components/Top";
 import Navbar from "./components/Navbar";
