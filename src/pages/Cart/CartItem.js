@@ -62,6 +62,7 @@ const Container = styled.div`
     height: 100%;
     width: 20rem;
     display: flex;
+    margin-top: 5rem;
     padding: 1rem;
     gap: 4rem;
     align-items: end;
@@ -69,7 +70,6 @@ const Container = styled.div`
   }
   img {
     height: 5rem;
-    margin-top: 4rem;
   }
   .title {
     font-weight: bold;

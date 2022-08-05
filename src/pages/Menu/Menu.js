@@ -38,6 +38,7 @@ const Container = styled.div`
     padding: 2rem;
     cursor: pointer;
     position: relative;
+    user-select: none;
     border: 1px;
     border-radius: 10px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -59,22 +60,43 @@ const Container = styled.div`
   }
   img {
     height: 10rem;
+    user-select: none;
   }
   h1 {
     text-align: center;
     margin-bottom: 3rem;
   }
-  h2 {
+  .card h2 {
     margin: 1.5rem 0;
   }
+  .card:hover h2 {
+    // display: none;
+  }
   // Button
+  .view {
+    color: var(--subTextHover);
+    background: var(--subHover);
+    border: 2px solid var(--subTextHover);
+    font-weight: bold;
+    width: 8rem;
+    padding: 0.7rem;
+    margin: 1.5rem auto;
+    display: none; // hides button initially
+    border-radius: 5rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--subText);
+      background: var(--subColor);
+      border: 2px solid var(--subColor);
+    }
+  }
   .add {
     color: var(--subColor);
     background-color: var(--navHover);
     font-weight: bold;
     width: 8rem;
     margin: 0 auto;
-    padding: 0.8rem;
+    padding: 0.7rem;
     display: none; // hides button initially
     border-radius: 5rem;
     user-select: none;

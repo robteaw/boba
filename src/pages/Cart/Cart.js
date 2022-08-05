@@ -38,7 +38,7 @@ const Cart = ({ cart }) => {
         </div>
         <div className="total">
           <p>
-            <b>Items:</b> ({totalItems})
+            <b>Items:</b> {totalItems}
           </p>
           <p>
             <b>Total:</b> ${totalPrice.toFixed(2)}
@@ -46,9 +46,7 @@ const Cart = ({ cart }) => {
           <button>Checkout</button>
         </div></>
         )
-        
       }
-        
       </div>
     </Container>
   );
@@ -84,6 +82,9 @@ const Container = styled.div`
   }
   .total {
     margin-top: 5rem;
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
     p {
       margin: 1.5rem 0;
       text-align: left;
