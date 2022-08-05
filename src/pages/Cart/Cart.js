@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
 const Cart = ({ cart }) => {
+  let navigate = useNavigate();
+
   // Total calculation
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
@@ -22,15 +25,17 @@ const Cart = ({ cart }) => {
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
   // If cart is empty
-  // const [cartAppear, setCartAppear] = useState(false);
-  // const showCart = () => setCartAppear(!cartAppear);
+  const [cartAppear, setCartAppear] = useState(false);
+  const showCart = () => setCartAppear(!cartAppear);
 
   return (
     <Container>
       <h1>Shopping Cart</h1>
       <div className="inner-container">
-        <div>
-          {/* <p>Your cart is empty.</p> */}
+        {totalItems === 0 ?  (<div className="empty"><p>Your cart is empty.</p><button onClick={() => navigate("/menu")}>View Menu</button></div>
+        ) : (
+      <>
+      <div>
           {cart.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
@@ -40,10 +45,14 @@ const Cart = ({ cart }) => {
             <b>Items:</b> ({totalItems})
           </p>
           <p>
-            <b>Total:</b> $ {totalPrice.toFixed(2)}
+            <b>Total:</b> ${totalPrice.toFixed(2)}
           </p>
           <button>Checkout</button>
-        </div>
+        </div></>
+        )
+        
+      }
+        
       </div>
     </Container>
   );
@@ -71,10 +80,18 @@ const Container = styled.div`
     display: flex;
     justify-content: space-around;
   }
+  .empty {
+    margin-top: 3rem;
+    button {
+      margin: 1.5rem 0;
+    }
+  }
   .total {
     margin-top: 5rem;
     p {
       margin: 1.5rem 0;
+      text-align: left;
+      word-spacing: 2rem;
     }
   }
   button {

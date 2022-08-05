@@ -21,7 +21,7 @@ const CartItem = ({ item, removeFromCart, adjustItemQty }) => {
         <div>
           <img src={item.img} alt={item.title} />
           <p className="title">{item.title}</p>
-          <p>$ {item.price.toFixed(2)}</p>
+          <p>${item.price.toFixed(2)}</p>
         </div>
         <div className="right">
           <input
@@ -63,7 +63,7 @@ const Container = styled.div`
     width: 20rem;
     display: flex;
     padding: 1rem;
-    gap: 5rem;
+    gap: 4rem;
     align-items: end;
     justify-content: center;
   }
