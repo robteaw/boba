@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import Data from "../Data";
 import { connect } from "react-redux";
-import { addToCart } from "../../../redux/Shopping/shopping-actions";
+import { addToCart, loadCurrentItem } from "../../../redux/Shopping/shopping-actions";
 
-const Product = ({ product, addToCart }) => {
+const Product = ({ product, addToCart, loadCurrentItem }) => {
   // Filter search
   const [filter, setFilter] = useState("");
 
@@ -62,7 +62,7 @@ const Product = ({ product, addToCart }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),
-    // loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
+    loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
   };
 };
 

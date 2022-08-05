@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 const Cart = ({ cart }) => {
+  // Total calculation
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
@@ -20,16 +21,21 @@ const Cart = ({ cart }) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
+  // If cart is empty
+  // const [cartAppear, setCartAppear] = useState(false);
+  // const showCart = () => setCartAppear(!cartAppear);
+
   return (
     <Container>
       <h1>Shopping Cart</h1>
-      <p>Your cart is empty.</p>
+        {/* <p>Your cart is empty.</p> */}
+        
       {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
       <div>
-        <p>Total: ({totalItems} items)</p>
-        <p>$ {totalPrice}</p>
+        <p><b>Total:</b> ({totalItems} items)</p>
+        <p>$ {totalPrice.toFixed(2)}</p>
         <button>Checkout</button>
       </div>
     </Container>

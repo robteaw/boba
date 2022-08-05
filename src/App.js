@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Routes, // Switch has been replaced with Routes
   Route,
+  Navigate,
 } from "react-router-dom"; // npm i react-router-dom
 import Top from "./components/Top";
 import Navbar from "./components/Navbar";
@@ -17,8 +18,9 @@ import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer";
 import Error from "./pages/Error"; // Error Page
 import ScrollToTop from "./components/ScrollToTop"; // Page stays on top when link clicked
+import {connect} from 'react-redux';
 
-export default function App() {
+export default function App({currentItem}) {
   return (
     <Router>
       <ScrollToTop />
@@ -32,9 +34,21 @@ export default function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
+        {!currentItem ? (
+            <Route path="/" />
+            ) : (<Route path="/menu" element={<Menu />} />
+        )}
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </Router>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    currentItem: state.shop.currentItem,
+  }
+}
+
+connect(mapStateToProps)(App);

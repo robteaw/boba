@@ -20,7 +20,7 @@ const CartItem = ({ item, removeFromCart, adjustItemQty }) => {
       <div className="items">
         <img src={item.img} alt={item.title} />
         <p className="title">{item.title}</p>
-        <p>{item.price}</p>
+        <p>$ {item.price.toFixed(2)}</p>
         <input
           type="number"
           id="qty"
