@@ -28,15 +28,22 @@ const Cart = ({ cart }) => {
   return (
     <Container>
       <h1>Shopping Cart</h1>
-        {/* <p>Your cart is empty.</p> */}
-        
-      {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
-      ))}
-      <div>
-        <p><b>Total:</b> ({totalItems} items)</p>
-        <p>$ {totalPrice.toFixed(2)}</p>
-        <button>Checkout</button>
+      <div className="inner-container">
+        <div>
+          {/* <p>Your cart is empty.</p> */}
+          {cart.map((item) => (
+            <CartItem key={item.id} item={item} />
+          ))}
+        </div>
+        <div className="total">
+          <p>
+            <b>Items:</b> ({totalItems})
+          </p>
+          <p>
+            <b>Total:</b> $ {totalPrice.toFixed(2)}
+          </p>
+          <button>Checkout</button>
+        </div>
       </div>
     </Container>
   );
@@ -50,7 +57,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(Cart);
 
-// styling
+// Styling
 const Container = styled.div`
   min-height: 100vh;
   height: 100%;
@@ -58,10 +65,17 @@ const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto 5rem auto;
   padding: 8rem 10%;
+  align-items: center;
   text-align: center;
-  p {
-    margin: 20px 0 32px 0;
-    line-height: 2;
+  .inner-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .total {
+    margin-top: 5rem;
+    p {
+      margin: 1.5rem 0;
+    }
   }
   button {
     color: var(--subText);
