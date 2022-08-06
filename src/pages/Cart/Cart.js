@@ -47,7 +47,7 @@ const Cart = ({ cart }) => {
               <p>
                 <b>Total:</b> ${totalPrice.toFixed(2)}
               </p>
-              <button>Checkout</button>
+              <button onClick={() => alert("Checkout Complete!") ? "" : window.location.reload()}>Checkout</button>
             </div>
           </>
         )}
@@ -73,19 +73,22 @@ const Container = styled.div`
   margin: 0 auto 5rem auto;
   padding: 8rem 10%;
   align-items: center;
+  justify-content: center;
   text-align: center;
   .inner-container {
     display: flex;
     justify-content: space-around;
   }
-  .empty {
-    margin-top: 3rem;
-    button {
-      margin: 1.5rem 0;
-    }
+  h1 {
+    margin-bottom: 5rem;
+  }
+  .empty button {
+    margin: 1.5rem 0;
   }
   .total {
-    margin-top: 5rem;
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 25px;
     p {
       margin: 1.5rem 0;
       text-align: left;

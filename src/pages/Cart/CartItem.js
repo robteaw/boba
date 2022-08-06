@@ -62,7 +62,7 @@ const Container = styled.div`
     height: 100%;
     width: 20rem;
     display: flex;
-    margin-top: 5rem;
+    margin: 1rem 0;
     padding: 1rem;
     gap: 4rem;
     align-items: end;
