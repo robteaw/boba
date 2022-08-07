@@ -64,7 +64,7 @@ const Container = styled.div`
     display: flex;
     margin: 1rem 0;
     padding: 1rem;
-    gap: 4rem;
+    gap: 3rem;
     align-items: end;
     justify-content: center;
   }

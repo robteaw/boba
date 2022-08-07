@@ -53,6 +53,12 @@ const Navbar = ({ cart }) => {
       className={color ? "navbar nav-scroll" : "navbar"}
     >
       <div className="brand">
+      <MenuIcon
+          onClick={handleClick}
+          className={icon ? "icon icon-scroll" : "icon"}
+        >
+          {click ? <FaTimes /> : <FaBars />}
+        </MenuIcon>
         <Link to="/">
           <Logo
             as={motion.img}
@@ -63,12 +69,11 @@ const Navbar = ({ cart }) => {
             onClick={closeMobileMenu}
           />
         </Link>
-        <MenuIcon
-          onClick={handleClick}
-          className={icon ? "icon icon-scroll" : "icon"}
-        >
-          {click ? <FaTimes /> : <FaBars />}
-        </MenuIcon>
+        <Link to="/cart" onClick={closeMobileMenu} className="nav-links">
+              <span className="cart">
+                <FaShoppingCart /> {cartCount}
+              </span>
+            </Link>
       </div>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <motion.li variants={linkAnim}>
@@ -154,6 +159,9 @@ const Nav = styled.nav`
       }
     }
   }
+  .brand .cart {
+    display: none;
+  }
   @media (max-width: 1100px) {
     .navbar {
       height: 65px;
@@ -185,6 +193,20 @@ const Nav = styled.nav`
       width: 100%;
       display: table;
     }
+    .brand .cart {
+      padding: 0.3rem 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 50%);
+      &:hover {
+        color: var(--navHover);
+      }
+    }
+    .cart {
+      display: none;
+    }
   }
 `;
 
@@ -195,9 +217,6 @@ const Logo = styled.img`
 
   @media (max-width: 1100px) {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 15%);
   }
 `;
 
@@ -206,11 +225,12 @@ const MenuIcon = styled.div`
   display: none;
 
   @media (max-width: 1100px) {
+    padding: 0.5rem 1.5vw;
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    transform: translate(-100%, 50%);
+    left: 0;
+    transform: translate(25%, 15%);
     font-size: 1.8rem;
     cursor: pointer;
   }

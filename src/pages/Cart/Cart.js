@@ -86,9 +86,9 @@ const Container = styled.div`
     margin: 1.5rem 0;
   }
   .total {
-    // position: -webkit-sticky;
-    // position: sticky;
-    // top: 25px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
     p {
       margin: 1.5rem 0;
       text-align: left;

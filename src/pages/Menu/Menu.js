@@ -34,11 +34,12 @@ const Container = styled.div`
     color: var(--subTextHover);
     background-color: var(--btnColor);
     height: 100%;
-    min-height: 23rem;
+    max-height: 20.5rem;
     width: 20rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
     user-select: none;
     border: 1px;
     border-radius: 10px;
