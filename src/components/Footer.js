@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Footer() {
-  return <Foot>© 2022 Boba Drunk. All Rights Reserved.</Foot>;
+  return <Foot><p>© 2022 Boba Drunk. All Rights Reserved.</p></Foot>;
 }
 
 // styling
@@ -17,4 +17,10 @@ const Foot = styled.div`
   bottom: 0;
   position: relative;
   clear: both;
+
+  @media (max-width: 700px) {
+    p {
+      font-size: 0.95rem;
+    }
+  }
 `;

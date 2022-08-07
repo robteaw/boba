@@ -113,4 +113,15 @@ const Container = styled.div`
       border: 2px solid var(--subTextHover);
     }
   }
+
+
+  @media (max-width: 600px) {
+    .inner-container {
+      flex-direction: column;
+    }
+    .total {
+      width: 50%;
+      margin: 4rem auto;
+    }
+  }
 `;

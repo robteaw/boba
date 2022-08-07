@@ -53,7 +53,7 @@ const Navbar = ({ cart }) => {
       className={color ? "navbar nav-scroll" : "navbar"}
     >
       <div className="brand">
-      <MenuIcon
+        <MenuIcon
           onClick={handleClick}
           className={icon ? "icon icon-scroll" : "icon"}
         >
@@ -70,10 +70,10 @@ const Navbar = ({ cart }) => {
           />
         </Link>
         <Link to="/cart" onClick={closeMobileMenu} className="nav-links">
-              <span className="cart">
-                <FaShoppingCart /> {cartCount}
-              </span>
-            </Link>
+          <span className="cart">
+            <FaShoppingCart /> {cartCount}
+          </span>
+        </Link>
       </div>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <motion.li variants={linkAnim}>
@@ -113,7 +113,7 @@ const Navbar = ({ cart }) => {
       </ul>
     </Nav>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   return {

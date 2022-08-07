@@ -60,7 +60,6 @@ const Container = styled.div`
 
   .items {
     height: 100%;
-    width: 20rem;
     display: flex;
     margin: 1rem 0;
     padding: 1rem;

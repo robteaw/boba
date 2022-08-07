@@ -9,7 +9,7 @@ export default function Top() {
     <Container>
       {show && (
         <InnerContainer>
-          Free delivery on all orders over $25!
+          <span>Free delivery on all orders over $25!</span>
           <button
             onClick={() => {
               toggleShow(!show);
@@ -46,4 +46,10 @@ const InnerContainer = styled.div`
   font-weight: bold;
   text-align: center;
   padding: 0.5rem;
+
+  @media (max-width: 700px) {
+    span {
+      font-size: 0.95rem;
+    }
+  }
 `;

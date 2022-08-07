@@ -42,6 +42,18 @@ p {
   line-height: 2;
 }
 
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}
+
 /* Navbar on scroll */
 .nav-scroll {
   background-color: var(--navScroll);

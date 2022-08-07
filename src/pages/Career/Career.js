@@ -91,6 +91,9 @@ const InnerContainer = styled.div`
       display: none;
     }
   }
+  @media (max-width: 500px) {
+    column-gap: 1rem;
+  }
 `;
 
 const Right = styled.div``;
