@@ -6,6 +6,7 @@ import {
 } from "../../redux/Shopping/shopping-actions";
 import { FaTrashAlt } from "react-icons/fa";
 import styled from "styled-components";
+import toast, { Toaster } from "react-hot-toast"; // npm i react-hot-toast
 
 const CartItem = ({ item, removeFromCart, adjustItemQty }) => {
   // Change price when quantity is adjusted
@@ -17,6 +18,7 @@ const CartItem = ({ item, removeFromCart, adjustItemQty }) => {
 
   return (
     <Container>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="items">
         <div>
           <img src={item.img} alt={item.title} />
@@ -32,7 +34,12 @@ const CartItem = ({ item, removeFromCart, adjustItemQty }) => {
             max="100"
             onChange={onChangeHandler}
           />
-          <button className="trash" onClick={() => removeFromCart(item.id)}>
+          <button
+            className="trash"
+            onClick={() =>
+              removeFromCart(item.id) && toast.error("Removed from Cart")
+            }
+          >
             <FaTrashAlt />
           </button>
         </div>

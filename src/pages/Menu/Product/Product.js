@@ -7,6 +7,7 @@ import {
   addToCart,
   loadCurrentItem,
 } from "../../../redux/Shopping/shopping-actions";
+import toast, { Toaster } from "react-hot-toast"; // npm i react-hot-toast
 
 const Product = ({ product, addToCart, loadCurrentItem }) => {
   let navigate = useNavigate();
@@ -33,6 +34,7 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
 
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="search_bar">
         <div className="search_icon">
           <FaSearch />
@@ -54,7 +56,12 @@ const Product = ({ product, addToCart, loadCurrentItem }) => {
               <img src={product.img} alt="" />
               <h2>{product.title}</h2>
               <p>${product.price.toFixed(2)}</p>
-              <span className="add" onClick={() => addToCart(product.id)}>
+              <span
+                className="add"
+                onClick={() =>
+                  addToCart(product.id) && toast.success("Added to Cart.")
+                }
+              >
                 Add to Cart
               </span>
               <span
